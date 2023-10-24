@@ -19,7 +19,7 @@ jobs:
     - name: Set up JDK 8
       uses: actions/setup-java@v3
       with:
-        java-version: '8.0.181'
+        java-version: '8.0.192+1'
         distribution: 'zulu'
         java-package: 'jdk+fx'
         cache: maven
