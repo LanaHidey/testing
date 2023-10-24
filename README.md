@@ -1,2 +1,5 @@
-# testing
-lab for software testing and debugging
+# Описание
+Это лабараторная работа по предмету "Отладка и тестирование"
+
+# Интерфейс
+![Screenshot](sc.png)

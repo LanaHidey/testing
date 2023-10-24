@@ -11,26 +11,11 @@ public class Main {
         int water = 20;
         boolean barrier = false;
 
-        List<Animal> animals = new ArrayList<>();
-        animals.add(new Dog());
-        animals.add(new Cat());
-        animals.add(new Horse());
-        animals.add(new Turtle());
-        animals.add(new Fish());
-
-        for (Animal animal : animals) {
-            animal.timePath(earth, water, barrier);
+        Calculator calculator = new Calculator();
+        for (AnimalInfo animalInfo : calculator.calc(earth, water, barrier)) {
+            System.out.println(animalInfo.getName() + " " + animalInfo.getInfo());
         }
 
-        animals = animals.stream().sorted((Comparator.comparingDouble(Animal::getTimePath))).collect(Collectors.toList());
 
-
-        for (Animal animal : animals) {
-            if (animal.getTimePath() < 0) {
-                System.out.println(animal.getAnimalType() + " не может завершить дистанцию");
-            } else {
-                System.out.println(animal.getAnimalType() + " " + animal.getTimePath() + " минут");
-            }
-        }
     }
 }

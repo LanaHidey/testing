@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="496.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.system.testing.ui.Controller">
+   <children>
+      <GridPane alignment="CENTER" layoutX="26.0" layoutY="52.0" prefHeight="113.0" prefWidth="455.0" style="-fx-background-color: #0394fc;">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="63.0" minHeight="0.0" prefHeight="53.0" valignment="CENTER" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <CheckBox fx:id="barrier" mnemonicParsing="false" text="Барьер" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="water" alignment="CENTER" prefHeight="25.0" prefWidth="143.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="31.0" prefWidth="200.0" text="м/c" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="135.0" text="Вода" wrapText="true" GridPane.rowIndex="1"/>
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="135.0" text="Земля" wrapText="true" />
+            <TextField fx:id="earth" alignment="CENTER" prefHeight="25.0" prefWidth="128.0" GridPane.columnIndex="1" />
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="135.0" text="м/c" wrapText="true" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <TableView fx:id="result" layoutX="26.0" layoutY="185.0" prefHeight="320.0" prefWidth="455.0">
+        <columns>
+          <TableColumn fx:id="animal" prefWidth="200.0" text="Животное" />
+          <TableColumn fx:id="info" minWidth="0.0" prefWidth="254.0" text="Время" />
+        </columns>
+      </TableView>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="496.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Меню">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#go" text="Поехали" />
+                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Выход" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

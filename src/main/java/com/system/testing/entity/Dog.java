@@ -1,4 +1,4 @@
-package com.system.testing;
+package com.system.testing.entity;
 
 public class Dog extends Animal {
     public Dog() {

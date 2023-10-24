@@ -1,4 +1,6 @@
-package com.system.testing;
+package com.system.testing.entity;
+
+import com.system.testing.Utils;
 
 public class Animal {
 
