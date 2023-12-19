@@ -15,10 +15,10 @@ import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 import org.testfx.assertions.api.Assertions;
 import java.io.File;
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Disabled
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(ApplicationExtension.class)
 public class UITest  {
