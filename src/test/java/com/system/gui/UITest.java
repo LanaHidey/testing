@@ -1,5 +1,6 @@
-package com.system.testing;
+package com.system.gui;
 
+import com.system.testing.AnimalInfo;
 import com.system.testing.ui.Controller;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +19,6 @@ import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Disabled
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(ApplicationExtension.class)
 public class UITest  {
@@ -76,7 +76,7 @@ public class UITest  {
         robot.clickOn("#menu").clickOn("#button1");
         ObservableList<Object> resultList = robot.lookup("#result").queryTableView().getItems();
         // Животные
-        assertEquals("черепаха", ((AnimalInfo) resultList.get(0)).getName());
+        org.junit.jupiter.api.Assertions.assertEquals("черепаха", ((AnimalInfo) resultList.get(0)).getName());
         assertEquals("рыба", ((AnimalInfo) resultList.get(1)).getName());
         assertEquals("лошадь", ((AnimalInfo) resultList.get(2)).getName());
         assertEquals("собака", ((AnimalInfo) resultList.get(3)).getName());
