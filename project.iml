@@ -18,5 +18,10 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-params:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-junit5:4.0.17" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest:2.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.assertj:assertj-core:3.13.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.testfx:testfx-core:4.0.17" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.osgi:org.osgi.core:6.0.0" level="project" />
   </component>
 </module>

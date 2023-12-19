@@ -13,7 +13,10 @@ public class Runner extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(new File("sample.fxml").toURL());
+        FXMLLoader loader = new FXMLLoader(new File("sample.fxml").toURL());
+        Parent root = loader.load();
+        Controller controller = loader.getController();
+        controller.setStage(primaryStage);
         primaryStage.setTitle("Калькулятор");
         primaryStage.setScene(new Scene(root, 525, 500));
         primaryStage.setResizable(false);

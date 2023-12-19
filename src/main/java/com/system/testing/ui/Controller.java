@@ -8,9 +8,14 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.util.Optional;
 
 
 public class Controller {
+    private Stage stage;
     @FXML
     public TextField earth;
     @FXML
@@ -34,9 +39,13 @@ public class Controller {
     public void go() {
         if (earth.getText().isEmpty() || water.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Ошибочка");
+            alert.setTitle("Ошибка");
             alert.setHeaderText("");
-             alert.setContentText("Нада ввести данные");
+            VBox content = new VBox();
+            Label label = new Label("Введены не все данные!");
+            label.setId("error");
+            content.getChildren().addAll(label);
+            alert.getDialogPane().setContent(content);
             alert.showAndWait();
             return;
         }
@@ -52,10 +61,26 @@ public class Controller {
 
     }
 
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+
     @FXML
     public void exit() {
-        System.out.println("Выходим");
-        System.exit(0);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Подтвердить выход");
+        alert.setHeaderText("");
+        VBox content = new VBox();
+        Label label = new Label("Вы точно уверенны что хотите выйти?");
+        label.setId("exitInfo");
+        content.getChildren().addAll(label);
+        alert.getDialogPane().setContent(content);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            stage.close();
+        } else {
+            System.out.println("Не выходим");
+        }
     }
 
 

@@ -15,7 +15,5 @@ public class Main {
         for (AnimalInfo animalInfo : calculator.calc(earth, water, barrier)) {
             System.out.println(animalInfo.getName() + " " + animalInfo.getInfo());
         }
-
-
     }
 }

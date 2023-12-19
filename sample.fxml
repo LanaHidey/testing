@@ -29,11 +29,11 @@
          <children>
             <CheckBox fx:id="barrier" mnemonicParsing="false" text="Барьер" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="water" alignment="CENTER" prefHeight="25.0" prefWidth="143.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label alignment="CENTER" prefHeight="31.0" prefWidth="200.0" text="м/c" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="31.0" prefWidth="200.0" text="км" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label alignment="CENTER" prefHeight="46.0" prefWidth="135.0" text="Вода" wrapText="true" GridPane.rowIndex="1"/>
             <Label alignment="CENTER" prefHeight="46.0" prefWidth="135.0" text="Земля" wrapText="true" />
             <TextField fx:id="earth" alignment="CENTER" prefHeight="25.0" prefWidth="128.0" GridPane.columnIndex="1" />
-            <Label alignment="CENTER" prefHeight="46.0" prefWidth="135.0" text="м/c" wrapText="true" GridPane.columnIndex="2" />
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="135.0" text="км" wrapText="true" GridPane.columnIndex="2" />
          </children>
       </GridPane>
       <TableView fx:id="result" layoutX="26.0" layoutY="185.0" prefHeight="320.0" prefWidth="455.0">
@@ -44,10 +44,10 @@
       </TableView>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="496.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Меню">
+          <Menu mnemonicParsing="false" text="Меню" fx:id="menu">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#go" text="Поехали" />
-                  <MenuItem mnemonicParsing="false" onAction="#exit" text="Выход" />
+                    <MenuItem mnemonicParsing="false" fx:id="button1" onAction="#go" text="Поехали" />
+                    <MenuItem mnemonicParsing="false" fx:id="button2" onAction="#exit" text="Выход" />
             </items>
           </Menu>
         </menus>

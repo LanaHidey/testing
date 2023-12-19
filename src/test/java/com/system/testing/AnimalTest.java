@@ -16,6 +16,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AnimalTest {
     private List<Animal> animals;
 
+
+        // Интеграционный, тест для метода calc класса Calculator, чтобы убедиться, что он возвращает правильный список AnimalInfo
+        @Test
+        void calcTest() {
+            Calculator calculator = new Calculator();
+            List<AnimalInfo> result = calculator.calc(10, 20, false);
+            // проверяем ожидаемый результат с использованием assertEquals
+            assertEquals(5, result.size(), "Должен вернутьсясписок из 5 объектов");
+
+            // Пример проверки содержания конкретных AnimalInfo
+            assertEquals("рыба", result.get(0).getName(), "Первое животное должно быть рыбой");
+            assertEquals("не может завершить дистанцию", result.get(0).getInfo(), "Информация о рыбе должна быть - не может завершить дистанцию");
+        }
+
     @BeforeEach
     void init() {
         this.animals = new ArrayList<>();
@@ -26,6 +40,7 @@ public class AnimalTest {
         animals.add(new Horse());
     }
 
+    // Функциональные так как они проверяют ожидаемое поведение и реакцию животных на конкретные условия
     @Test
     @DisplayName("Тест на барьеры")
     void barrierTest() {
@@ -40,12 +55,16 @@ public class AnimalTest {
                 "черепаха должна пройти дистанцию, без барьера");
     }
 
+
+    // Модульный, поскольку он проверяет функциональность конкретного метода из класса Utils
     @Test
     @DisplayName("Тест перевода м/с в км/ч")
     void mpsToKmhTest() {
         assertEquals(72, Utils.mpsToKmh(20), "Неправильный перевод м/с в км/ч");
     }
 
+
+    // Функциональный, проверяется ожидаемое поведение системы
     @Test
     @DisplayName("Тест рыбы")
     void noRunningSpeedTest() {
@@ -61,6 +80,7 @@ public class AnimalTest {
             "3, 0,  5, 17",
             "4, 10,  10, 161"
     })
+    // Функциональный, проверяется ожидаемое поведение для всех животных при различных условиях
     void allAnimalsTest(int animal, int earth, int water, int expectedResult) {
         assertEquals(expectedResult, animals.get(animal).timePath(earth, water, true).getTimePath(), "животное " + animals.get(animal).getAnimalType() + " пробежало неправильно");
     }
