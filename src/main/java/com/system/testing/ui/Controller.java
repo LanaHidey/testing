@@ -15,7 +15,7 @@ import java.util.Optional;
 
 
 public class Controller {
-    private Stage stage;
+
     @FXML
     public TextField earth;
     @FXML
@@ -28,6 +28,8 @@ public class Controller {
     public TableColumn<AnimalInfo, String> animal;
     @FXML
     public TableColumn<AnimalInfo, String> info;
+
+    private Stage stage = null;
 
     private final Calculator calculator;
 
@@ -76,7 +78,7 @@ public class Controller {
         content.getChildren().addAll(label);
         alert.getDialogPane().setContent(content);
         Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
+        if (result.get() == ButtonType.OK && stage != null) {
             stage.close();
         } else {
             System.out.println("Не выходим");
