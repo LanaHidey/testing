@@ -21,7 +21,7 @@ jobs:
       with:
         java-version: '8'
         distribution: 'oracle'
-        java-package: 'jdk+fx'
+        java-package: 'jdk'
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
