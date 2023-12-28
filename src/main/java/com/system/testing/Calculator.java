@@ -9,14 +9,22 @@ import java.util.stream.Collectors;
 
 public class Calculator {
 
-    public List<AnimalInfo> calc(int earth, int water, boolean barrier) {
-        List<Animal> animals = new ArrayList<>();
+    private List<Animal> animals;
+
+    public Calculator() {
+        this.animals = new ArrayList<>();
         animals.add(new Dog());
         animals.add(new Cat());
         animals.add(new Horse());
         animals.add(new Turtle());
         animals.add(new Fish());
+    }
 
+    public Calculator(List<Animal> animals) {
+        this.animals = animals;
+    }
+
+    public List<AnimalInfo> calc(int earth, int water, boolean barrier) {
         for (Animal animal : animals) {
             animal.timePath(earth, water, barrier);
         }

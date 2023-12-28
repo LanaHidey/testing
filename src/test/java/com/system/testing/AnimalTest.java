@@ -13,22 +13,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@DisplayName("Основное тестирование")
 public class AnimalTest {
     private List<Animal> animals;
-
-
-        // Интеграционный, тест для метода calc класса Calculator, чтобы убедиться, что он возвращает правильный список AnimalInfo
-        @Test
-        void calcTest() {
-            Calculator calculator = new Calculator();
-            List<AnimalInfo> result = calculator.calc(10, 20, false);
-            // проверяем ожидаемый результат с использованием assertEquals
-            assertEquals(5, result.size(), "Должен вернутьсясписок из 5 объектов");
-
-            // Пример проверки содержания конкретных AnimalInfo
-            assertEquals("рыба", result.get(0).getName(), "Первое животное должно быть рыбой");
-            assertEquals("не может завершить дистанцию", result.get(0).getInfo(), "Информация о рыбе должна быть - не может завершить дистанцию");
-        }
 
     @BeforeEach
     void init() {
@@ -38,6 +25,20 @@ public class AnimalTest {
         animals.add(new Cat());
         animals.add(new Fish());
         animals.add(new Horse());
+    }
+
+    // Интеграционный, тест для метода calc класса Calculator, чтобы убедиться, что он возвращает правильный список AnimalInfo
+    @Test
+    @DisplayName("Интеграционный тест")
+    void calcTest() {
+        Calculator calculator = new Calculator();
+        List<AnimalInfo> result = calculator.calc(10, 20, false);
+        // проверяем ожидаемый результат с использованием assertEquals
+        assertEquals(5, result.size(), "Должен вернутьсясписок из 5 объектов");
+
+        // Пример проверки содержания конкретных AnimalInfo
+        assertEquals("рыба", result.get(0).getName(), "Первое животное должно быть рыбой");
+        assertEquals("не может завершить дистанцию", result.get(0).getInfo(), "Информация о рыбе должна быть - не может завершить дистанцию");
     }
 
     // Функциональные так как они проверяют ожидаемое поведение и реакцию животных на конкретные условия
@@ -80,6 +81,7 @@ public class AnimalTest {
             "3, 0,  5, 17",
             "4, 10,  10, 161"
     })
+    @DisplayName("Эталонный тест")
     // Функциональный, проверяется ожидаемое поведение для всех животных при различных условиях
     void allAnimalsTest(int animal, int earth, int water, int expectedResult) {
         assertEquals(expectedResult, animals.get(animal).timePath(earth, water, true).getTimePath(), "животное " + animals.get(animal).getAnimalType() + " пробежало неправильно");

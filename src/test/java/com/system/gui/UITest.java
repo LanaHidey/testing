@@ -21,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ExtendWith(ApplicationExtension.class)
+@DisplayName("Тестирование интерфейсов")
 public class UITest  {
 
     /**
@@ -68,6 +69,17 @@ public class UITest  {
 
     @Test
     @Order(3)
+    @DisplayName("Ошибочный ввод")
+    public void incorrectInput(FxRobot robot) {
+        robot.clickOn("#water").write("фыв");
+        robot.clickOn("#earth").write("выф");
+        robot.clickOn("#barrier");
+        robot.clickOn("#menu").clickOn("#button1");
+        Assertions.assertThat(robot.lookup("#error").queryLabeled()).hasText("Данные введены не корректно!");
+    }
+
+    @Test
+    @Order(4)
     @DisplayName("Проверяем работу")
     public void checkGoodWork(FxRobot robot) {
         robot.clickOn("#earth").write("5");
@@ -90,7 +102,7 @@ public class UITest  {
     }
 
     @Test()
-    @Order(4)
+    @Order(5)
     @DisplayName("Проверяем выход")
     public void testExit(FxRobot robot) {
         robot.clickOn("#menu").clickOn("#button2");
